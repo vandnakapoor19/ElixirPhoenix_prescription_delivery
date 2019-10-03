@@ -1,0 +1,19 @@
+<%= form_for @changeset, order_path(@conn, :update, @order), fn f -> %>
+<div class="form-group">
+  <%= text_input f, :title, placeholder: "Title",class: "form-control" %>
+  <%= error_tag f, :title %>
+</div>
+<div class="form-group">
+  <%= text_input f, :patient_name, placeholder: "Patient Name",class: "form-control" %>
+  <%= error_tag f, :patient_name %>
+</div>
+<div class="form-group">
+  <%= textarea f, :patient_address, placeholder: "Patient Address",class: "form-control" %>
+  <%= error_tag f, :patient_address %>
+</div>
+<div class="form-group">
+  <%=text_input  f, :order_datetime, placeholder: "Pickup Date",class: "form-control" %>
+  <%= error_tag f, :order_datetime %>
+</div>
+<%= submit "Edit Order", class: "btn btn-primary" %>
+<% end %>
